@@ -6,16 +6,28 @@ const {EncodeToken} = require('../utility/TokenHelper')
 
 const UserOTPService = async (req) => {
     try {
-        const email = req.params.email;
-        const code = Math.floor(100000 + Math.random() * 900000)
-        const EmailText = `Your Verification Code is ${code}`
-        const EmailSubject = "Email Verification"
-        await EmailSend(email, EmailText, EmailSubject)
+      const email = req.params.email;
+      const code = Math.floor(100000 + Math.random() * 900000);
+      const EmailText = `Your Verification Code is ${code}`;
+      const EmailSubject = "Email Verification";
+      await EmailSend(email, EmailText, EmailSubject);
 
-        await UserModel.updateOne({email: email}, {$set: {otp: code}}, {upsert: true})
-        return {status: 'success', message: '6 Digit OTP has been sent successfully'}
+      await UserModel.updateOne(
+        { email: email },
+        { $set: { otp: code } },
+        { upsert: true }
+      );
+      return {
+        status: "success",
+        message: "6 Digit OTP has been sent successfully",
+      };
     } catch (err) {
-        return {status: 'error', message: 'An error has occurred, failed to send email verification'}
+        return {
+          status: "error",
+          message:
+            "An error has occurred, failed to send email verification+" +
+            err.message,
+        };
     }
     
 }

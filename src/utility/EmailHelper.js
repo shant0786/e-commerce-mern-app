@@ -3,23 +3,22 @@ const nodemailer = require('nodemailer')
 
 const EmailSend = async (EmailTo, EmailText, EmailSubject) => {
     const transport = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 465,
-        secure: true,
-        auth: {
-            user: "rm.shanto786@gmail.com",
-            pass: "wxwyrfhqpppbrfoa"
-        },
-        tls: {
-            rejectUnauthorized: false
-        }
-    })
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: true,
+      service: "gmail",
+
+      auth: {
+        user: "dev.alrasels@gmail.com",
+        pass: "avmqygwvmbbeveqs",
+      },
+    });
     const mailOption = {
-        from: "MERN E-Commerce Solutions <rm.shanto786@gmail.com>",
-        to: EmailTo,
-        subject: EmailSubject,
-        text: EmailText
-    }
+      from: "MERN E-Commerce Solutions <dev.alrasels@gmail.com>",
+      to: EmailTo,
+      subject: EmailSubject,
+      text: EmailText,
+    };
     return await transport.sendMail(mailOption)
 }
 
