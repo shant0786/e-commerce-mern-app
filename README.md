@@ -90,53 +90,33 @@ npm run dev
 
 The server will run on `http://localhost:8000`.
 
-# **API Endpoints with Descriptions**  
+# **API Endpoints Overview**  
 
 ## **1. Products**  
-- **GET** `/ProductBrandList` – Retrieve a list of all available product brands.  
-- **GET** `/ProductCategoryList` – Retrieve a list of all product categories.  
-- **GET** `/ProductSliderList` – Fetch featured products for the homepage slider.  
-- **GET** `/ProductListByBrand/:brandID` – Get products filtered by a specific brand.  
-- **GET** `/ProductListByCategory/:categoryID` – Get products filtered by a specific category.  
-- **GET** `/ProductListBySimilar/:categoryID` – Retrieve similar products based on category.  
-- **GET** `/ProductListByKeyword/:keyword` – Search products using keywords.  
-- **GET** `/ProductListByRemark/:remark` – Fetch products based on specific remarks (e.g., "new arrivals").  
-- **GET** `/ProductDetails/:productID` – Get detailed information about a specific product.  
-- **POST** `/ProductListByFilter` – Retrieve products filtered by brand, category, and price range.  
+- Retrieve product brands, categories, and featured items.  
+- Search and filter products by brand, category, similarity, keyword, or remarks.  
+- Get detailed product information.  
 
 ## **2. User Authentication & Profile**  
-- **GET** `/UserOTP/:email` – Send a one-time password (OTP) to the user’s email for authentication.  
-- **GET** `/VerifyLogin/:email/:otp` – Verify OTP and authenticate the user.  
-- **GET** `/UserLogout` – Log the user out of the system.  
-- **GET** `/ReadProfile` – Retrieve the user’s profile details.  
-- **POST** `/CreateProfile` – Create a new user profile with personal and shipping details.  
-- **POST** `/UpdateProfile` – Update the user’s profile information.  
+- OTP-based login and verification.  
+- Profile creation, update, and retrieval.  
+- User logout.  
 
 ## **3. Wishlist**  
-- **POST** `/SaveWishList` – Add a product to the user’s wishlist.  
-- **POST** `/RemoveWishList` – Remove a product from the wishlist.  
-- **GET** `/WishList` – Retrieve all items saved in the user’s wishlist.  
+- Add, remove, and view wishlist items.  
 
 ## **4. Cart**  
-- **POST** `/SaveCartList` – Add a product to the shopping cart with quantity and other details.  
-- **POST** `/UpdateCartList/:cartID` – Update an item’s details in the cart (e.g., quantity, color, size).  
-- **POST** `/RemoveCartList` – Remove a product from the cart.  
-- **GET** `/CartList` – Retrieve all products currently in the cart.  
+- Manage cart items: add, update, remove, and view.  
 
 ## **5. Orders & Invoices**  
-- **GET** `/CreateInvoice` – Generate an order invoice after checkout.  
-- **GET** `/InvoiceList` – Retrieve a list of all invoices for the user.  
-- **GET** `/InvoiceProductList/:invoiceID` – Get a list of products included in a specific invoice.  
+- Generate invoices and view order history.  
 
 ## **6. Features & Legal**  
-- **GET** `/FeaturesList` – Retrieve details about the app’s features.  
-- **GET** `/LegalDetails/:type` – Fetch legal information such as "how to buy" or return policies.  
+- Retrieve app features and legal details.  
 
 ## **7. Reviews**  
-- **POST** `/CreateReview` – Submit a review for a purchased product.  
-- **GET** `/ProductReviewList/:productID` – Retrieve all reviews for a specific product.  
-
-This structured list provides clear descriptions of each endpoint. Let me know if you need any modifications.
+- Submit and view product reviews.
+- This structured list provides clear descriptions of each endpoint. Let me know if you need any modifications.
 
 For detailed information on request and response structures, refer to the API documentation or the source code.
 
