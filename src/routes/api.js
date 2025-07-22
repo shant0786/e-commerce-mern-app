@@ -120,6 +120,7 @@ router.get('/LegalDetails/:type', FeaturesController.LegalDetails)
 
 //Create Review
 router.post("/CreateReview", AuthVerification, ProductController.CreateReview);
+// order page hotfix
 
 
 module.exports = router;

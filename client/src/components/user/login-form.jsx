@@ -36,7 +36,7 @@ function LoginForm() {
               />
               <UserSubmitButton
                 submit={false}
-                className="btn mt-3 btn-success"
+                className="btn mt-3 btn-success mx-2"
                 text="Next"
                 onClick={onFormSubmit}
               />

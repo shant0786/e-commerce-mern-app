@@ -161,9 +161,13 @@ const PaymentIPNService = async (req) => {
 
 const PaymentSuccessService = async (req) => {
     try {
-        const trxID = req.params.trxID
-        await InvoiceModel.updateOne({tran_id: trxID}, {payment_status: "success"})
-        return {status: 'success'}
+      const trxID = req.params.trxID;
+      await InvoiceModel.updateOne(
+        { tran_id: trxID },
+        { payment_status: "success" }
+      );
+
+      return { status: "success" };
     } catch (err) {
         return {status: 'fail', message: 'Something Went Wrong' + err.message}
     }
